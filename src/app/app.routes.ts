@@ -4,7 +4,7 @@ import { SendComponent } from './send/send.component';
 import { PostComponent } from './post/post.component';
 
 export const routes: Routes = [
-  { path: 'requests', component: RequestsComponent },
+  { path: '', component: RequestsComponent },
   { path: 'requests/:id', component: SendComponent },
   { path: 'post', component: PostComponent },
 ];
