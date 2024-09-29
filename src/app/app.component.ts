@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title = 'hackyeah2024';
+  title = 'good-vibes';
 
   constructor(private api: ApiService) {}
 
