@@ -1,0 +1,15 @@
+<mat-form-field [style.fontSize]="'16px'" class="textarea">
+  <mat-label>Autosize textarea</mat-label>
+  <textarea
+    [formControl]="control"
+    matInput
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="5"
+  ></textarea>
+</mat-form-field>
+
+<div class="request-energy-btn">
+  <button mat-flat-button (click)="requestEnergy()">Request energy!</button>
+</div>

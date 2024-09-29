@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea {
+  flex: 1;
+  margin: 1rem;
+  min-height: 20rem;
+}
+
+.request-energy-btn {
+  margin-right: 1rem;
+  justify-content: flex-end;
+  display: flex;
+}

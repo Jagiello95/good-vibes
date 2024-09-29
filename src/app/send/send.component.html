@@ -6,9 +6,9 @@
     ></app-card-content>
   </mat-card-content>
   <div class="card-button">
-    <div class="progress unselectable">{{ progress }}/{{ request.limit }}</div>
+    <div class="progress unselectable">{{ energyCounter }}/100</div>
     <circle-progress
-      [percent]="request.progress"
+      [percent]="request.energyCounter"
       [radius]="100"
       [outerStrokeWidth]="18"
       [innerStrokeWidth]="12"
@@ -20,7 +20,7 @@
       [showSubtitle]="false"
       [showUnits]="false"
       [renderOnClick]="false"
-      (click)="addEnergy()"
+      (click)="addEnergy(request)"
     ></circle-progress>
   </div>
 </mat-card>

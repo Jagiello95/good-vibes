@@ -2,14 +2,14 @@
   <div class="card-content-container">
     <div class="card-content__header">
       <div class="card-content__title">
-        @if (request.progress > 50) {
+        @if (request.energyCounter > 50) {
         <img class="image" src="./happy_face.png" />
         } @else {
         <img class="image" src="./sad_face.png" />
         }
 
         <div class="card-content__title">
-          {{ request.title }}
+          {{ request.userName }} potrzebuje energii!
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CommonModule } from '@angular/common';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-send',
@@ -31,10 +32,16 @@ export class SendComponent implements OnInit, AfterViewInit {
   public request: any;
   public shouldAnimate: boolean = false;
 
-  public get progress(): number {
-    return this.request?.progress <= 100 ? this.request.progress : 100;
+  public get energyCounter(): number {
+    return this.request?.energyCounter <= 100
+      ? this.request.energyCounter
+      : 100;
   }
-  constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
+  constructor(
+    private route: ActivatedRoute,
+    private api: ApiService,
+    private cdr: ChangeDetectorRef
+  ) {
     this.route.params.subscribe((data) => console.log(data));
   }
 
@@ -50,7 +57,11 @@ export class SendComponent implements OnInit, AfterViewInit {
     this.shouldAnimate = false;
   }
 
-  public addEnergy(): void {
-    this.request.progress = this.request.progress + 1;
+  public addEnergy(request: any): void {
+    this.api.giveEnergy(request).subscribe(() => {
+      console.log(123);
+      this.request.energyCounter = this.request.energyCounter + 1;
+      this.cdr.detectChanges();
+    });
   }
 }
