@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hackyeah2024": {
+    "good-vibes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/hackyeah2024",
+            "outputPath": "dist/good-vibes",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "hackyeah2024:build:production"
+              "buildTarget": "good-vibes:build:production"
             },
             "development": {
-              "buildTarget": "hackyeah2024:build:development"
+              "buildTarget": "good-vibes:build:development"
             }
           },
           "defaultConfiguration": "development"

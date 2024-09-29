@@ -18,7 +18,7 @@
   @if (showProgress) {
   <div>
     <circle-progress
-      [percent]="request.energyCounter"
+      [percent]="request.energyCounter <= 100 ? request.energyCounter : 100"
       [radius]="60"
       [outerStrokeWidth]="16"
       [innerStrokeWidth]="9"

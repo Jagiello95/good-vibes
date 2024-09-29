@@ -48,3 +48,8 @@ div {
 .clickable {
   cursor: pointer;
 }
+
+.mdc-text-field--filled {
+  background-color: white !important;
+  border-radius: 50%;
+}
