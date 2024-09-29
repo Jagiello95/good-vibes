@@ -58,10 +58,15 @@ export class SendComponent implements OnInit, AfterViewInit {
   }
 
   public addEnergy(request: any): void {
-    this.api.giveEnergy(request).subscribe(() => {
-      console.log(123);
-      this.request.energyCounter = this.request.energyCounter + 1;
-      this.cdr.detectChanges();
+    this.request.energyCounter = this.request.energyCounter + 1;
+
+    this.api.giveEnergy(request).subscribe({
+      next: () => {
+        console.log(123);
+        this.cdr.detectChanges();
+      },
+      error: () =>
+        (this.request.energyCounter = this.request.energyCounter - 1),
     });
   }
 }
